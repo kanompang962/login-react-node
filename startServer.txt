@@ -1,3 +1,11 @@
-#1 node (pathfile server).js
-#or
-#1 npm start
+/* server */ (nodeJs)
+
+>npm init -y
+>npm install express body-parser mongoose cors morgan bcryptjs jsonwebtoken nodemon dotenv
+>node (pathfile server).js (>npm start)
+
+
+/* client */ (reactJs)
+
+>npx create-react-app client
+>npm install axios react-router-dom

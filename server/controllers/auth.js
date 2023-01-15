@@ -29,7 +29,7 @@ exports.register = async (req, res) => {
 
     } catch (err) {
         console.log(err)
-        res.stayus(500).send("Server Error!")
+        res.status(500).send("Server Error!")
     }
 }
 //////////////////////////////////////////////////////////
@@ -53,24 +53,29 @@ exports.login = async (req, res) => {
             }
             // Payload
             const payload = {
-                user:{
+                user: {
                     username: user.username,
                     role: user.role,
                 }
             }
             // Generate Token
-            jwt.sign(payload, 'jwtSecret', {expiresIn: 3600 }, (err, token)=>{
+            jwt.sign(payload, 'jwtSecret', {
+                expiresIn: 3600
+            }, (err, token) => {
                 if (err) throw err;
-                res.json({token, payload});
+                res.json({
+                    token,
+                    payload,
+                });
             });
 
-            
+
         } else {
             return res.status(400).send('User Not found!!')
         }
     } catch (err) {
         console.log(err)
-        res.stayus(500).send("Server Error!")
+        res.status(500).send("Server Error!")
     }
 }
 //////////////////////////////////////////////////////////
@@ -90,7 +95,7 @@ exports.editUser = async (req, res) => {
 
     } catch (err) {
         console.log(err)
-        res.stayus(500).send("Server Error!")
+        res.status(500).send("Server Error!")
     }
 }
 //////////////////////////////////////////////////////////
@@ -100,6 +105,6 @@ exports.deleteUser = async (req, res) => {
 
     } catch (err) {
         console.log(err)
-        res.stayus(500).send("Server Error!")
+        res.status(500).send("Server Error!")
     }
 }

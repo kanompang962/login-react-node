@@ -1,6 +1,7 @@
 /* server */ (nodeJs)
 
 >npm init -y
+//Libary
 >npm install express body-parser mongoose cors morgan bcryptjs jsonwebtoken nodemon dotenv
 >node (pathfile server).js (>npm start)
 
@@ -8,4 +9,7 @@
 /* client */ (reactJs)
 
 >npx create-react-app client
+//Libary
 >npm install axios react-router-dom
+//Design
+>npm install antd react-toastify
